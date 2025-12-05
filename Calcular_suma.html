@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Suma de dos números</title>
+    <title>Operaciones con dos números</title>
     <style>
         .container {
             text-align: center;
@@ -29,7 +29,7 @@
 
 <div class="container">
     <div class="content">
-        <h2>Suma y resta de dos números</h2>
+        <h2>Suma, resta y multiplicación de dos números</h2>
 
         <form>
             <div class="input-container">
@@ -40,9 +40,9 @@
                 <label for="num2">Segundo número:</label>
                 <input type="text" id="num2">
             </div>
-<input type="button" value="Calcular suma"  style="background-color: green;" onclick="calcularSuma()">
-<input type="button" value="Calcular resta" style="background-color: red;"   onclick="calcularResta()">
-
+            <input type="button" value="Calcular suma"         style="background-color: green;" onclick="calcularSuma()">
+            <input type="button" value="Calcular resta"        style="background-color: red;"   onclick="calcularResta()">
+            <input type="button" value="Calcular producto"     style="background-color: blue;"  onclick="calcularProducto()">
         </form>
 
         <div id="resultado"></div>
@@ -72,6 +72,20 @@ function calcularResta() {
         var resta = num1 - num2;
         document.getElementById("resultado").innerHTML =
             "El resultado de la resta es: " + resta;
+    } else {
+        document.getElementById("resultado").innerHTML =
+            "Por favor, ingrese dos números válidos.";
+    }
+}
+
+function calcularProducto() {
+    var num1 = parseFloat(document.getElementById("num1").value);
+    var num2 = parseFloat(document.getElementById("num2").value);
+
+    if (!isNaN(num1) && !isNaN(num2)) {
+        var producto = num1 * num2;
+        document.getElementById("resultado").innerHTML =
+            "El resultado del producto es: " + producto;
     } else {
         document.getElementById("resultado").innerHTML =
             "Por favor, ingrese dos números válidos.";
