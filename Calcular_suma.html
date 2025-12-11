@@ -42,6 +42,8 @@
             </div>
 <input type="button" value="Calcular suma"  style="background-color: green;" onclick="calcularSuma()">
 <input type="button" value="Calcular resta" style="background-color: red;"   onclick="calcularResta()">
+<input type="button" value="Calcular cociente" onclick="calcularCociente()">
+
 
         </form>
 
@@ -72,6 +74,23 @@ function calcularResta() {
         var resta = num1 - num2;
         document.getElementById("resultado").innerHTML =
             "El resultado de la resta es: " + resta;
+    } else {
+        document.getElementById("resultado").innerHTML =
+            "Por favor, ingrese dos números válidos.";
+    }
+}
+
+function calcularCociente() {
+    var num1 = parseFloat(document.getElementById("num1").value);
+    var num2 = parseFloat(document.getElementById("num2").value);
+
+    if (!isNaN(num1) && !isNaN(num2) && num2 !== 0) {
+        var cociente = num1 / num2;
+        document.getElementById("resultado").innerHTML =
+            "El resultado del cociente es: " + cociente;
+    } else if (num2 === 0) {
+        document.getElementById("resultado").innerHTML =
+            "No se puede dividir entre cero.";
     } else {
         document.getElementById("resultado").innerHTML =
             "Por favor, ingrese dos números válidos.";
